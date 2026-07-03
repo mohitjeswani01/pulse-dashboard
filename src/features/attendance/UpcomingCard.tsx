@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion'
 import type { Holiday, LeaveRequest } from '../../types'
+import { useLeaveStore } from '../../store/leaveStore'
 import { Badge, Card } from '../../components/ui'
-import { MONTHS } from '../../lib/utils'
+import { MONTHS, capitalize } from '../../lib/utils'
 import { istTodayIso } from '../../lib/attendance'
 
 interface UpcomingItem {
@@ -24,7 +25,7 @@ function buildItems(
     .filter((r) => r.from > todayIso && r.status !== 'rejected')
     .map((r) => ({
       date: r.from,
-      title: `${r.type[0]?.toUpperCase()}${r.type.slice(1)} leave`,
+      title: `${capitalize(r.type)} leave`,
       subtitle: r.days === 1 ? '1 day' : `${r.days} days`,
       status: r.status === 'approved' ? 'approved' : 'pending',
     }))
@@ -48,10 +49,10 @@ function DateTile({ date }: { date: string }) {
 
 interface UpcomingCardProps {
   holidays: Holiday[]
-  requests: LeaveRequest[]
 }
 
-export function UpcomingCard({ holidays, requests }: UpcomingCardProps) {
+export function UpcomingCard({ holidays }: UpcomingCardProps) {
+  const requests = useLeaveStore((s) => s.requests)
   const items = buildItems(holidays, requests, istTodayIso())
 
   return (

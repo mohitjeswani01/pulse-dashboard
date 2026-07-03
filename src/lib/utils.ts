@@ -36,19 +36,7 @@ export function getInitials(name: string): string {
     .join('')
 }
 
-/** Count working days (Mon–Fri) between two ISO dates, inclusive. */
-export function workingDays(fromIso: string, toIso: string): number {
-  const from = new Date(`${fromIso}T00:00:00`)
-  const to = new Date(`${toIso}T00:00:00`)
-  if (Number.isNaN(from.getTime()) || Number.isNaN(to.getTime()) || from > to) {
-    return 0
-  }
-  let count = 0
-  const cursor = new Date(from)
-  while (cursor <= to) {
-    const day = cursor.getDay()
-    if (day !== 0 && day !== 6) count++
-    cursor.setDate(cursor.getDate() + 1)
-  }
-  return count
+/** Uppercase the first letter, e.g. "casual" → "Casual". */
+export function capitalize(value: string): string {
+  return value.charAt(0).toUpperCase() + value.slice(1)
 }

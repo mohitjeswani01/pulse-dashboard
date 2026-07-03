@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import {
   CalendarCheck,
   CalendarX,
@@ -6,13 +7,9 @@ import {
   Laptop,
   TreePalm,
 } from 'lucide-react'
-import {
-  getAttendance,
-  getHolidays,
-  getLeaveBalances,
-  getLeaveRequests,
-} from '../services/api'
+import { getAttendance, getHolidays } from '../services/api'
 import { useAsync } from '../lib/useAsync'
+import { useLeaveStore } from '../store/leaveStore'
 import {
   avgCheckInMinutes,
   countByStatus,
@@ -27,30 +24,43 @@ import { UpcomingCard } from '../features/attendance/UpcomingCard'
 import { DashboardSkeleton } from '../features/attendance/DashboardSkeleton'
 import { LeaveBalanceCard } from '../features/leave/LeaveBalanceCard'
 
-// Module-level so the reference stays stable across renders (useAsync dep)
+// Module-level so the reference stays stable across renders (useAsync dep).
+// Leave balances + requests come from the shared leaveStore instead.
 async function loadDashboard() {
-  const [attendance, balances, requests, holidays] = await Promise.all([
+  const [attendance, holidays] = await Promise.all([
     getAttendance(),
-    getLeaveBalances(),
-    getLeaveRequests(),
     getHolidays(),
   ])
-  return { attendance, balances, requests, holidays }
+  return { attendance, holidays }
 }
 
 export function DashboardPage() {
   const { data, loading, error, retry } = useAsync(loadDashboard)
+  const leaveStatus = useLeaveStore((s) => s.status)
+  const hydrateLeave = useLeaveStore((s) => s.hydrate)
 
-  if (loading) return <DashboardSkeleton />
+  useEffect(() => {
+    void hydrateLeave()
+  }, [hydrateLeave])
 
-  if (error || !data) {
+  const leaveLoading = leaveStatus === 'idle' || leaveStatus === 'loading'
+
+  if (loading || leaveLoading) return <DashboardSkeleton />
+
+  if (error || leaveStatus === 'error' || !data) {
     return (
       <EmptyState
         icon={CircleAlert}
         title="Couldn't load your dashboard"
         description="Something went wrong while fetching your data. Please try again."
         action={
-          <Button variant="outline" onClick={retry}>
+          <Button
+            variant="outline"
+            onClick={() => {
+              retry()
+              void hydrateLeave(true)
+            }}
+          >
             Try again
           </Button>
         }
@@ -58,7 +68,7 @@ export function DashboardPage() {
     )
   }
 
-  const { attendance, balances, requests, holidays } = data
+  const { attendance, holidays } = data
 
   if (attendance.length === 0) {
     return (
@@ -115,8 +125,8 @@ export function DashboardPage() {
           <AttendanceCalendar records={attendance} />
         </div>
         <div className="min-w-0 space-y-6">
-          <LeaveBalanceCard balances={balances} />
-          <UpcomingCard holidays={holidays} requests={requests} />
+          <LeaveBalanceCard />
+          <UpcomingCard holidays={holidays} />
         </div>
       </div>
     </div>

@@ -1,20 +1,14 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import type { LeaveBalance } from '../../types'
+import { useLeaveStore } from '../../store/leaveStore'
+import { LEAVE_TYPE_LABELS } from '../../lib/leave'
 import { Button, Card } from '../../components/ui'
 
-const TYPE_LABELS: Record<LeaveBalance['type'], string> = {
-  casual: 'Casual',
-  sick: 'Sick',
-  earned: 'Earned',
-}
-
-interface LeaveBalanceCardProps {
-  balances: LeaveBalance[]
-}
-
-export function LeaveBalanceCard({ balances }: LeaveBalanceCardProps) {
+/** Dashboard rail card — reads balances from the shared leaveStore, so a
+ *  request submitted on the Leave page updates these bars live too. */
+export function LeaveBalanceCard() {
+  const balances = useLeaveStore((s) => s.balances)
   const navigate = useNavigate()
 
   return (
@@ -31,7 +25,9 @@ export function LeaveBalanceCard({ balances }: LeaveBalanceCardProps) {
           {balances.map((balance, i) => (
             <div key={balance.type}>
               <div className="flex items-baseline justify-between">
-                <p className="text-sm font-medium">{TYPE_LABELS[balance.type]}</p>
+                <p className="text-sm font-medium">
+                  {LEAVE_TYPE_LABELS[balance.type]}
+                </p>
                 <p className="text-xs text-ink-muted">
                   {balance.used}/{balance.total} used
                 </p>
