@@ -2,6 +2,7 @@ import type {
   Announcement,
   AttendanceRecord,
   Employee,
+  Holiday,
   LeaveBalance,
   LeaveRequest,
 } from '../types'
@@ -10,6 +11,7 @@ import attendanceData from '../data/attendance.json'
 import leaveBalancesData from '../data/leaveBalances.json'
 import leaveRequestsData from '../data/leaveRequests.json'
 import announcementsData from '../data/announcements.json'
+import holidaysData from '../data/holidays.json'
 
 /** Simulate network latency: 400–800ms. */
 function delay(): Promise<void> {
@@ -20,6 +22,7 @@ function delay(): Promise<void> {
 const employees = employeesData as Employee[]
 const attendance = attendanceData as AttendanceRecord[]
 const announcements = announcementsData as Announcement[]
+const holidays = holidaysData as Holiday[]
 
 const leaveBalances = leaveBalancesData as LeaveBalance[]
 
@@ -49,6 +52,11 @@ export async function getLeaveRequests(): Promise<LeaveRequest[]> {
 export async function getAnnouncements(): Promise<Announcement[]> {
   await delay()
   return [...announcements]
+}
+
+export async function getHolidays(): Promise<Holiday[]> {
+  await delay()
+  return [...holidays]
 }
 
 export type NewLeaveRequest = Omit<LeaveRequest, 'id' | 'status' | 'appliedOn'>

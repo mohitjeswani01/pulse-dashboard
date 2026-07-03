@@ -3,9 +3,13 @@ export function cn(...classes: Array<string | false | null | undefined>): string
   return classes.filter(Boolean).join(' ')
 }
 
-const MONTHS = [
+export const MONTHS = [
   'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+] as const
+
+const WEEKDAYS = [
+  'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
 ] as const
 
 /** Format an ISO date (YYYY-MM-DD) as "DD MMM YYYY", e.g. "03 Jul 2026". */
@@ -13,6 +17,13 @@ export function formatDate(iso: string): string {
   const [y, m, d] = iso.split('-').map(Number)
   if (!y || !m || !d) return iso
   return `${String(d).padStart(2, '0')} ${MONTHS[m - 1]} ${y}`
+}
+
+/** Format an ISO date with its weekday, e.g. "Friday, 03 Jul 2026". */
+export function formatDateLong(iso: string): string {
+  const date = new Date(`${iso}T00:00:00`)
+  if (Number.isNaN(date.getTime())) return iso
+  return `${WEEKDAYS[date.getDay()]}, ${formatDate(iso)}`
 }
 
 /** Initials from a full name, e.g. "Mohit Jeswani" → "MJ". */

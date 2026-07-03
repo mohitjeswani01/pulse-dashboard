@@ -1,4 +1,5 @@
 export { Card, IconTile } from './Card'
+export { StatCard } from './StatCard'
 export { Button } from './Button'
 export { Badge } from './Badge'
 export { Skeleton } from './Skeleton'

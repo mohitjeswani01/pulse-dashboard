@@ -3,9 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Bell, Menu, Moon, Sun } from 'lucide-react'
 import { useThemeStore } from '../../store/themeStore'
 import { getInitials } from '../../lib/utils'
+import { CURRENT_USER_NAME } from '../../lib/constants'
 import { PAGE_TITLES } from './nav'
-
-const CURRENT_USER = 'Mohit Jeswani'
 
 const iconButtonClass =
   'relative inline-flex size-9 items-center justify-center rounded-xl text-ink-muted transition-colors duration-200 hover:bg-elevated hover:text-ink'
@@ -71,9 +70,9 @@ export function Topbar({ onMenuClick }: TopbarProps) {
 
       <div
         className="ml-1 flex size-9 items-center justify-center rounded-xl bg-accent text-xs font-bold text-white"
-        title={CURRENT_USER}
+        title={CURRENT_USER_NAME}
       >
-        {getInitials(CURRENT_USER)}
+        {getInitials(CURRENT_USER_NAME)}
       </div>
     </header>
   )

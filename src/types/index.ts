@@ -47,6 +47,11 @@ export interface LeaveRequest {
   appliedOn: string // ISO date
 }
 
+export interface Holiday {
+  date: string // ISO date (YYYY-MM-DD)
+  name: string
+}
+
 export type AnnouncementCategory =
   | 'general'
   | 'policy'
