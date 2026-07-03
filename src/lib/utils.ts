@@ -40,3 +40,12 @@ export function getInitials(name: string): string {
 export function capitalize(value: string): string {
   return value.charAt(0).toUpperCase() + value.slice(1)
 }
+
+/** Compact relative time from an epoch-ms timestamp, e.g. "just now", "5m ago". */
+export function timeAgo(at: number): string {
+  const seconds = Math.max(0, Math.round((Date.now() - at) / 1000))
+  if (seconds < 60) return 'just now'
+  const minutes = Math.round(seconds / 60)
+  if (minutes < 60) return `${minutes}m ago`
+  return `${Math.round(minutes / 60)}h ago`
+}
