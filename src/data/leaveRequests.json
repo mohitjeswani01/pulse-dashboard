@@ -1,0 +1,52 @@
+[
+  {
+    "id": "lr-005",
+    "type": "casual",
+    "from": "2026-07-17",
+    "to": "2026-07-17",
+    "days": 1,
+    "reason": "Personal errand — passport appointment at the regional office.",
+    "status": "pending",
+    "appliedOn": "2026-06-30"
+  },
+  {
+    "id": "lr-004",
+    "type": "casual",
+    "from": "2026-06-15",
+    "to": "2026-06-15",
+    "days": 1,
+    "reason": "Cousin's wedding in Jaipur, travelling over the weekend.",
+    "status": "approved",
+    "appliedOn": "2026-06-08"
+  },
+  {
+    "id": "lr-003",
+    "type": "earned",
+    "from": "2026-05-04",
+    "to": "2026-05-08",
+    "days": 5,
+    "reason": "Family trip to Himachal planned during the summer break.",
+    "status": "rejected",
+    "appliedOn": "2026-04-20"
+  },
+  {
+    "id": "lr-002",
+    "type": "sick",
+    "from": "2026-04-09",
+    "to": "2026-04-10",
+    "days": 2,
+    "reason": "Viral fever, doctor advised two days of rest.",
+    "status": "approved",
+    "appliedOn": "2026-04-09"
+  },
+  {
+    "id": "lr-001",
+    "type": "earned",
+    "from": "2026-02-16",
+    "to": "2026-02-20",
+    "days": 5,
+    "reason": "Sister's engagement ceremony in Indore, helping with arrangements.",
+    "status": "approved",
+    "appliedOn": "2026-01-28"
+  }
+]

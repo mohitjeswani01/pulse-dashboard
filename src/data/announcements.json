@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ann-001",
+    "title": "Q2 Town Hall — 10 July, 4:00 PM IST",
+    "category": "event",
+    "author": "Debashish Roy",
+    "date": "2026-07-01",
+    "pinned": true,
+    "body": "Our quarterly town hall is scheduled for Friday, 10 July at 4:00 PM IST. As always, it will run in hybrid mode — join us on the 7th floor at the Bengaluru office or over the all-hands video link that will be shared on the morning of the event. The agenda this quarter is packed: leadership will walk through Q2 business performance and revenue highlights, the product team will demo the two features that shipped in June, and we will announce the winners of the customer impact awards. We will close with a thirty-minute open AMA with the founders, so start submitting your questions on the anonymous form pinned in the #town-hall channel. Questions with the most upvotes get answered first. Attendance is optional but strongly encouraged — the session is recorded, and the recording along with slides will be shared within two working days. Chai and samosas after the session for everyone attending in person, as tradition demands."
+  },
+  {
+    "id": "ann-002",
+    "title": "Revised Work-From-Home Policy, Effective 15 July",
+    "category": "policy",
+    "author": "Gurpreet Kaur",
+    "date": "2026-06-28",
+    "pinned": true,
+    "body": "After three months of consultation with team leads and the feedback survey that 84% of you filled out, we are rolling out a revised work-from-home policy effective Wednesday, 15 July. The headline change: everyone now has two anchor days — Tuesday and Thursday — when the whole company works from the office, and the remaining three days are flexible. You no longer need manager approval for WFH on flexible days; just mark it in Pulse before 9:30 AM so your team knows where to find you. Teams may designate one additional anchor day during release weeks, with 48 hours of notice. Employees in cities without a Pulse office continue to be fully remote and are unaffected. The monthly internet reimbursement goes up from ₹1,000 to ₹1,500, claimable through the expenses portal with a bill. Please read the full policy document on the HR wiki before the effective date — it covers equipment, timezone overlap expectations, and the exception process for caregiving situations."
+  },
+  {
+    "id": "ann-003",
+    "title": "Welcome Our June Cohort!",
+    "category": "people",
+    "author": "Zoya Ansari",
+    "date": "2026-06-22",
+    "pinned": false,
+    "body": "Please join us in giving a warm Pulse welcome to the four wonderful people who joined us this June. Ritika Sharma joins Engineering as a QA Engineer from Indore — she has spent the last three years breaking things professionally at a fintech startup and promises to be gentle with our releases. Meher Bhatt comes on board as an Associate Product Manager in Ahmedabad, fresh from an MBA and a summer internship where she shipped a real feature to two million users. Karthik Subramanian, our new Product Designer in Chennai, has a background in industrial design and strong opinions about typography that we fully endorse. And Zoya Ansari — yes, that's me writing my own welcome — joins the HR team in Lucknow. Their onboarding buddies have been assigned, and you will spot them in the #introductions channel this week. Say hello, grab a virtual coffee with them, and make their first month memorable. We are thrilled to have all of you!"
+  },
+  {
+    "id": "ann-004",
+    "title": "Diwali Week — Advance Notice for Travel Planning",
+    "category": "general",
+    "author": "Gurpreet Kaur",
+    "date": "2026-06-25",
+    "pinned": false,
+    "body": "It is only July, but we know many of you book trains and flights months ahead for the festive season, so here is your advance notice. Diwali falls on Sunday, 8 November this year. The company will observe holidays on Monday, 9 November and Tuesday, 10 November, giving everyone a four-day festive break when combined with the weekend. If you want a longer break, leave requests for that week will open in Pulse on 1 August and will be approved on a first-come, first-served basis per team, since we need minimal coverage for customer-facing functions. Based on last year's feedback, we are also planning the Diwali celebration at each office on Friday, 6 November — expect the rangoli competition to return, and yes, Engineering is still smarting from losing to HR last year. Ethnic wear encouraged, families welcome. Detailed celebration plans and the gifting announcement will follow in October. Book your tickets early and plan that time with family — it is the best week of the year."
+  },
+  {
+    "id": "ann-005",
+    "title": "Health Insurance Top-Up Window Open Until 31 July",
+    "category": "policy",
+    "author": "Zoya Ansari",
+    "date": "2026-06-18",
+    "pinned": false,
+    "body": "The annual enhancement window for our group health insurance is now open and closes on Friday, 31 July — no extensions, as the insurer locks the policy after that. Every employee already has the base cover of ₹5 lakh for self, spouse, and up to two children, fully paid by the company. During this window you can do three things. First, top up your sum insured to ₹10 lakh or ₹15 lakh at subsidised premiums that are deducted from your August salary in one instalment. Second, add your parents or parents-in-law to the policy — premiums depend on their age band, and the rate card is on the HR wiki. Third, opt into the new OPD rider that covers outpatient consultations, diagnostics, and pharmacy bills up to ₹15,000 a year. If you did this last year, your choices do not carry forward automatically; you must re-select. Log into the insurer portal linked from the benefits page, and reach out to the HR helpdesk for anything confusing. Do not leave this for the last day."
+  },
+  {
+    "id": "ann-006",
+    "title": "Pulse Hackathon 'Sprint & Ship' — 21–22 August",
+    "category": "event",
+    "author": "Sneha Kulkarni",
+    "date": "2026-06-15",
+    "pinned": false,
+    "body": "Block your calendars: our annual internal hackathon, Sprint & Ship, returns on Friday and Saturday, 21–22 August. The format stays the same as last year because you told us you loved it — 24 hours, teams of two to four, and one rule: whatever you build must be demoable, not a slide deck. This year's theme is 'Small Tools, Big Wins' — internal tools, workflow automations, and quality-of-life improvements for our customers or ourselves. There are three prize tracks: Best Customer Impact, Best Internal Tool, and the People's Choice award voted live during demos. Winning teams get ₹50,000 per track, bragging rights, and a fast-track review to get their hack onto the actual roadmap — three of last year's winners are in production today. Non-engineers are absolutely welcome and historically over-represented among winners; every team with a designer or PM has an unfair advantage at demo time. Registrations open 1 August on the hackathon portal. Food, energy drinks, and the traditional midnight Maggi station are all confirmed."
+  },
+  {
+    "id": "ann-007",
+    "title": "Bengaluru Office: 7th Floor Renovation and Seating Changes",
+    "category": "facilities",
+    "author": "Vikram Rathore",
+    "date": "2026-06-10",
+    "pinned": false,
+    "body": "Starting Monday, 14 July, the 7th floor of the Bengaluru office goes under renovation for approximately six weeks. We are adding four new meeting rooms, a dedicated recording studio for customer calls and demos, sixteen focus pods, and finally replacing the coffee machine that has been the subject of 43 helpdesk tickets. During the renovation, teams currently seated on the 7th floor — Design and half of Engineering — will move to the temporary seating plan on floors 5 and 6 that your managers have already received. Lockers must be emptied by end of day Friday, 11 July; facilities will provide boxes and will move labelled boxes for you. Expect intermittent drilling noise on floors 5 and 6 between 2 PM and 5 PM; noise-cancelling headphones are available at the IT desk against your employee ID. Anchor days remain unchanged during this period. The renovated floor opens late August, and trust us — the before-and-after photos will be worth the inconvenience."
+  },
+  {
+    "id": "ann-008",
+    "title": "Quarterly Performance Check-Ins Open 1–20 July",
+    "category": "general",
+    "author": "Debashish Roy",
+    "date": "2026-06-30",
+    "pinned": false,
+    "body": "The Q2 performance check-in cycle opens on Wednesday, 1 July and closes on Monday, 20 July. A reminder of how our lightweight process works: this is a conversation, not an appraisal. Start by filling in your self-reflection form in the performance tool — three questions covering what you shipped, what you learned, and where you want support. It should take thirty minutes, not three hours; bullet points are fine and encouraged. Then book a 45-minute conversation with your manager before the window closes. Managers will share written feedback within a week of the conversation, and you can respond to it in the tool. Nothing in this cycle affects compensation — the annual compensation review happens in December against the full year. New joiners who have been here less than 60 days do the reflection but skip the rating entirely. If your manager is on leave during the window, HR will reach out with an alternate plan. Questions go to the #performance channel, and genuinely — do not write essays."
+  }
+]

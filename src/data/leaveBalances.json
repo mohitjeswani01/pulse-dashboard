@@ -1,0 +1,5 @@
+[
+  { "type": "casual", "total": 12, "used": 4 },
+  { "type": "sick", "total": 10, "used": 2 },
+  { "type": "earned", "total": 15, "used": 5 }
+]

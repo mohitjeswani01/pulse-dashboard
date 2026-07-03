@@ -1,0 +1,110 @@
+[
+  {
+    "id": "emp-001",
+    "name": "Mohit Jeswani",
+    "role": "Frontend Engineer",
+    "department": "Engineering",
+    "email": "mohit.jeswani@pulsehq.in",
+    "city": "Pune",
+    "joinDate": "2024-08-12"
+  },
+  {
+    "id": "emp-002",
+    "name": "Ananya Iyer",
+    "role": "Design Lead",
+    "department": "Design",
+    "email": "ananya.iyer@pulsehq.in",
+    "city": "Bengaluru",
+    "joinDate": "2021-03-01"
+  },
+  {
+    "id": "emp-003",
+    "name": "Arjun Reddy",
+    "role": "Backend Engineer",
+    "department": "Engineering",
+    "email": "arjun.reddy@pulsehq.in",
+    "city": "Hyderabad",
+    "joinDate": "2022-11-14"
+  },
+  {
+    "id": "emp-004",
+    "name": "Sneha Kulkarni",
+    "role": "Product Manager",
+    "department": "Product",
+    "email": "sneha.kulkarni@pulsehq.in",
+    "city": "Mumbai",
+    "joinDate": "2022-01-10"
+  },
+  {
+    "id": "emp-005",
+    "name": "Gurpreet Kaur",
+    "role": "HR Manager",
+    "department": "HR",
+    "email": "gurpreet.kaur@pulsehq.in",
+    "city": "Delhi",
+    "joinDate": "2020-07-20"
+  },
+  {
+    "id": "emp-006",
+    "name": "Debashish Roy",
+    "role": "Engineering Manager",
+    "department": "Engineering",
+    "email": "debashish.roy@pulsehq.in",
+    "city": "Kolkata",
+    "joinDate": "2019-10-05"
+  },
+  {
+    "id": "emp-007",
+    "name": "Kavya Menon",
+    "role": "UI/UX Designer",
+    "department": "Design",
+    "email": "kavya.menon@pulsehq.in",
+    "city": "Kochi",
+    "joinDate": "2023-04-17"
+  },
+  {
+    "id": "emp-008",
+    "name": "Vikram Rathore",
+    "role": "DevOps Engineer",
+    "department": "Engineering",
+    "email": "vikram.rathore@pulsehq.in",
+    "city": "Jaipur",
+    "joinDate": "2022-06-06"
+  },
+  {
+    "id": "emp-009",
+    "name": "Ritika Sharma",
+    "role": "QA Engineer",
+    "department": "Engineering",
+    "email": "ritika.sharma@pulsehq.in",
+    "city": "Indore",
+    "joinDate": "2023-09-25"
+  },
+  {
+    "id": "emp-010",
+    "name": "Karthik Subramanian",
+    "role": "Product Designer",
+    "department": "Design",
+    "email": "karthik.subramanian@pulsehq.in",
+    "city": "Chennai",
+    "joinDate": "2021-12-13"
+  },
+  {
+    "id": "emp-011",
+    "name": "Meher Bhatt",
+    "role": "Associate Product Manager",
+    "department": "Product",
+    "email": "meher.bhatt@pulsehq.in",
+    "city": "Ahmedabad",
+    "joinDate": "2024-02-19"
+  },
+  {
+    "id": "emp-012",
+    "name": "Zoya Ansari",
+    "role": "HR Executive",
+    "department": "HR",
+    "email": "zoya.ansari@pulsehq.in",
+    "city": "Lucknow",
+    "joinDate": "2023-07-03"
+  }
+]
