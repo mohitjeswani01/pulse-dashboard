@@ -1,9 +1,11 @@
 import { useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Bell, Menu, Moon, Sun } from 'lucide-react'
+import { Menu, Moon, Search, Sun } from 'lucide-react'
 import { useThemeStore } from '../../store/themeStore'
+import { useCommandStore } from '../../store/commandStore'
 import { getInitials } from '../../lib/utils'
 import { CURRENT_USER_NAME } from '../../lib/constants'
+import { NotificationBell } from './NotificationBell'
 import { PAGE_TITLES } from './nav'
 
 const iconButtonClass =
@@ -17,6 +19,7 @@ export function Topbar({ onMenuClick }: TopbarProps) {
   const { pathname } = useLocation()
   const theme = useThemeStore((state) => state.theme)
   const toggleTheme = useThemeStore((state) => state.toggleTheme)
+  const openCommand = useCommandStore((state) => state.setOpen)
   const title = PAGE_TITLES[pathname] ?? 'Pulse'
 
   return (
@@ -35,6 +38,30 @@ export function Topbar({ onMenuClick }: TopbarProps) {
       </h2>
 
       <div className="flex-1" />
+
+      {/* Command palette trigger — a wide chip on desktop, an icon on mobile. */}
+      <button
+        type="button"
+        onClick={() => openCommand(true)}
+        aria-label="Open command palette"
+        aria-keyshortcuts="Control+K"
+        className="hidden h-9 items-center gap-2 rounded-xl border border-line bg-surface pr-2 pl-3 text-sm text-ink-faint transition-colors duration-200 hover:border-accent/40 hover:text-ink sm:flex"
+      >
+        <Search className="size-4" aria-hidden />
+        <span>Search…</span>
+        <kbd className="rounded-md border border-line bg-elevated px-1.5 py-0.5 font-body text-[10px] font-medium text-ink-muted">
+          Ctrl K
+        </kbd>
+      </button>
+      <button
+        type="button"
+        onClick={() => openCommand(true)}
+        className={`${iconButtonClass} sm:hidden`}
+        aria-label="Open command palette"
+        aria-keyshortcuts="Control+K"
+      >
+        <Search className="size-4.5" aria-hidden />
+      </button>
 
       <button
         type="button"
@@ -60,13 +87,7 @@ export function Topbar({ onMenuClick }: TopbarProps) {
         </AnimatePresence>
       </button>
 
-      <button type="button" className={iconButtonClass} aria-label="Notifications">
-        <Bell className="size-4.5" aria-hidden />
-        <span
-          className="absolute top-2 right-2.5 size-1.5 rounded-full bg-accent"
-          aria-hidden
-        />
-      </button>
+      <NotificationBell />
 
       <div
         className="ml-1 flex size-9 items-center justify-center rounded-xl bg-accent text-xs font-bold text-white"

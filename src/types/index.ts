@@ -6,6 +6,7 @@ export interface Employee {
   role: string
   department: Department
   email: string
+  phone: string // "+91 ....."
   city: string
   joinDate: string // ISO date (YYYY-MM-DD)
 }

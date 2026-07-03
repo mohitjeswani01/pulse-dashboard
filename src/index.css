@@ -8,13 +8,13 @@
  * set in index.html). Tailwind utilities read them via @theme inline below.
  */
 :root {
-  --canvas: #f6f5f2;
+  --canvas: #faf9f6;
   --surface: #ffffff;
-  --elevated: #ffffff;
-  --line: rgba(10, 10, 10, 0.09);
+  --elevated: #f1efea;
+  --line: rgba(10, 10, 10, 0.08);
   --ink: #0a0a0a;
-  --ink-muted: rgba(10, 10, 10, 0.56);
-  --ink-faint: rgba(10, 10, 10, 0.36);
+  --ink-muted: rgba(10, 10, 10, 0.58);
+  --ink-faint: rgba(10, 10, 10, 0.42);
 }
 
 .dark {

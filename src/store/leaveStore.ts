@@ -7,6 +7,7 @@ import {
   type NewLeaveRequest,
 } from '../services/api'
 import { istTodayIso } from '../lib/attendance'
+import { useNotificationStore } from './notificationStore'
 
 /**
  * Flip to true to exercise the failure path (rollback + error toast).
@@ -102,6 +103,7 @@ export const useLeaveStore = create<LeaveState>((set, get) => ({
           state.highlightId === tempId ? { highlightId: null } : state,
         )
       }, 1600)
+      useNotificationStore.getState().push('Leave request submitted')
       return { ok: true }
     } catch {
       // Rollback: drop the request and restore the balance.

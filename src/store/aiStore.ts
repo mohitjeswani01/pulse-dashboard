@@ -11,6 +11,10 @@ interface AiState {
   entries: Record<string, SummaryEntry>
   setEntry: (key: string, entry: SummaryEntry) => void
   clear: (key: string) => void
+  /** Set by the command palette to auto-run the digest once on Announcements. */
+  pendingDigest: boolean
+  requestDigest: () => void
+  clearDigest: () => void
 }
 
 /** Cache of AI summaries so repeat "Summarize" clicks are instant. */
@@ -24,4 +28,7 @@ export const useAiStore = create<AiState>((set) => ({
       delete next[key]
       return { entries: next }
     }),
+  pendingDigest: false,
+  requestDigest: () => set({ pendingDigest: true }),
+  clearDigest: () => set({ pendingDigest: false }),
 }))

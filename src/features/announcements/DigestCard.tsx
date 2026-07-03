@@ -1,8 +1,10 @@
+import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { RotateCw, Sparkles } from 'lucide-react'
 import type { Announcement } from '../../types'
 import { Button } from '../../components/ui'
 import { timeAgo } from '../../lib/utils'
+import { useAiStore } from '../../store/aiStore'
 import { useSummarize } from './useSummarize'
 
 const MAX_DIGEST_INPUT = 5800
@@ -28,9 +30,20 @@ interface DigestCardProps {
 
 export function DigestCard({ announcements }: DigestCardProps) {
   const { entry, summary, loading, error, run } = useSummarize('digest')
+  const pendingDigest = useAiStore((s) => s.pendingDigest)
+  const clearDigest = useAiStore((s) => s.clearDigest)
 
   const generate = (force = false) =>
     run({ text: buildDigestInput(announcements), mode: 'digest' }, { force })
+
+  // The command palette's "Generate AI digest" action navigates here and sets
+  // this flag; run the digest once, then clear it.
+  useEffect(() => {
+    if (!pendingDigest) return
+    clearDigest()
+    void generate()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pendingDigest])
 
   return (
     <div className="rounded-2xl bg-gradient-to-br from-accent/60 via-accent/15 to-amber/50 p-px shadow-[0_0_60px_-22px_rgba(255,92,0,0.7)]">

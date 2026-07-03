@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useAiStore } from '../../store/aiStore'
 import { useToastStore } from '../../store/toastStore'
+import { useNotificationStore } from '../../store/notificationStore'
 
 type Mode = 'single' | 'digest'
 
@@ -48,6 +49,9 @@ export function useSummarize(cacheKey: string) {
         keyUsed: data.keyUsed ?? 1,
         at: Date.now(),
       })
+      useNotificationStore
+        .getState()
+        .push(cacheKey === 'digest' ? 'AI digest generated' : 'Announcement summarized')
     } catch {
       // Provider details never reach here — we only ever see our own generic
       // failure. Surface a toast + inline state, never crash.

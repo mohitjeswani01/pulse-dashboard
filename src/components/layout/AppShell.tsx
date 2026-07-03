@@ -1,13 +1,37 @@
-import { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useLocation, useOutlet } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ToastViewport } from '../ui'
+import { useCommandStore } from '../../store/commandStore'
 import { Sidebar } from './Sidebar'
 import { Topbar } from './Topbar'
+import { CommandPalette } from './CommandPalette'
+import { PAGE_TITLES } from './nav'
 
 export function AppShell() {
   // The drawer closes via Sidebar's onNavigate, so no route effect is needed
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const location = useLocation()
+  const outlet = useOutlet()
+  const toggleCommand = useCommandStore((s) => s.toggle)
+
+  // Per-route document title, e.g. "Dashboard — Pulse".
+  useEffect(() => {
+    const title = PAGE_TITLES[location.pathname] ?? 'Not Found'
+    document.title = `${title} — Pulse`
+  }, [location.pathname])
+
+  // Ctrl/Cmd+K toggles the command palette from anywhere.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault()
+        toggleCommand()
+      }
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [toggleCommand])
 
   return (
     <div className="min-h-screen bg-canvas text-ink">
@@ -44,12 +68,22 @@ export function AppShell() {
         <Topbar onMenuClick={() => setDrawerOpen(true)} />
         <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
           <div className="mx-auto w-full max-w-6xl">
-            <Outlet />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={location.pathname}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0, transition: { duration: 0.2, ease: 'easeOut' } }}
+                exit={{ opacity: 0, transition: { duration: 0.12, ease: 'easeOut' } }}
+              >
+                {outlet}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </main>
       </div>
 
       <ToastViewport />
+      <CommandPalette />
     </div>
   )
 }
