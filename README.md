@@ -8,12 +8,12 @@ A dark-first employee dashboard: attendance, leave management, a team directory,
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-Functions-000000?logo=vercel&logoColor=white)
 
-**[Live Demo →](LIVE_DEMO_URL)**
+**[Live demo : pulse-dashboard-sandy.vercel.app](https://pulse-dashboard-sandy.vercel.app/)**
 <!-- Replace LIVE_DEMO_URL with the deployed Vercel URL. -->
 
 ## Screenshot
 
-![Pulse dashboard](docs/screenshot.png)
+![Pulse dashboard](https://github.com/user-attachments/assets/54f4c9da-0409-4f97-9b16-37901a90a650)
 <!-- Replace docs/screenshot.png with a hero screenshot of the dashboard. -->
 
 ## Features
